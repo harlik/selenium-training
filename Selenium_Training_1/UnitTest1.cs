@@ -10,13 +10,11 @@ namespace Selenium_Training_1
     public class MyFirstTest
     {
         private IWebDriver driver;
-        private WebDriverWait wait;
 
         [SetUp]
         public void start()
         {
             driver = new EdgeDriver();
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         [Test]
@@ -32,4 +30,33 @@ namespace Selenium_Training_1
             driver = null;
         }
     }
+
+    [TestFixture]
+    public class MyLoginTest
+    {
+        private IWebDriver driver;
+
+        [SetUp]
+        public void start()
+        {
+            driver = new EdgeDriver();
+        }
+
+        [Test]
+        public void LoginTest()
+        {
+            driver.Url = "http://localhost:9999/admin/";
+            driver.FindElement(By.Name("username")).SendKeys("admin");
+            driver.FindElement(By.Name("password")).SendKeys("admin");
+            driver.FindElement(By.Name("login")).Click();
+        }
+
+        [TearDown]
+        public void stop()
+        {
+            driver.Quit();
+            driver = null;
+        }
+    }
+
 }
