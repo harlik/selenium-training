@@ -69,6 +69,7 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Homework_3_1.cs" />
+    <Compile Include="Homework_3_2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
