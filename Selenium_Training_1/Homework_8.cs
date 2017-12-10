@@ -10,7 +10,7 @@ namespace Selenium_Training_1
 {
 
     [TestFixture]
-    public class ClassHomework_3_2
+    public class ClassHomework_8
     {
         private EdgeDriver driver;
 
@@ -22,7 +22,7 @@ namespace Selenium_Training_1
         }
 
         [Test]
-        public void Homework_3_2()
+        public void Homework_8()
         {
             driver.Url = "http://localhost:9999/";
             IList <IWebElement> products = driver.FindElements(By.ClassName("product"));

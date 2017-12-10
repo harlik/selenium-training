@@ -10,7 +10,7 @@ namespace Selenium_Training_1
 {
 
     [TestFixture]
-    public class ClassHomework_3_1
+    public class ClassHomework_7
     {
         private EdgeDriver driver;
 
@@ -22,7 +22,7 @@ namespace Selenium_Training_1
         }
 
         [Test]
-        public void Homework_3_1()
+        public void Homework_7()
         {
             driver.Url = "http://localhost:9999/admin/";
             driver.FindElement(By.Name("username")).SendKeys("admin");
