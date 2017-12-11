@@ -40,9 +40,8 @@ namespace Selenium_Training_1
             RGBA[1] = RGBA[1].Trim();
             RGBA[2] = RGBA[2].Trim();
             Assert.True((RGBA[0] == RGBA[1]) && (RGBA[1] == RGBA[2]), "Regular Price is not grey.");
-            //обычная цена зачёркнутая
-            Assert.True((Price.GetCssValue("text-decoration").ToLower() == "line-through") ||
-                (Price.GetCssValue("text-decoration-line").ToLower() == "line-through"), "Regular Price is not crossed.");
+            //обычная цена зачёркнута
+            Assert.True(Price.TagName.ToLower() == "s", "Regular Price is not strocked.");
         }
 
         public void CheckIfCampaignIsLarger(IWebElement RegPrice, IWebElement CampPrice)

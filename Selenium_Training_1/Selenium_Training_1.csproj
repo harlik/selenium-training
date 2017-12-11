@@ -67,13 +67,13 @@
   <ItemGroup>
     <Compile Include="Homework_2_1.cs" />
     <Compile Include="Homework_1.cs" />
-    <Compile Include="Homework_9_1_mistaken.cs" />
+    <Compile Include="Homework_9_1.cs" />
     <Compile Include="Homework_10.cs" />
     <Compile Include="Homework_9_2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Homework_7.cs" />
     <Compile Include="Homework_8.cs" />
-    <Compile Include="Homework_9_1.cs" />
+    <Compile Include="Homework_9_1_mistaken.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
