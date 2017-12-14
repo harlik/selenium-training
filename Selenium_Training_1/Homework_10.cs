@@ -96,7 +96,6 @@ namespace Selenium_Training_1
             CheckIfGreyAndCrossed(ProductRegularPrice);
             CheckIfRedAndStrong(ProductCampaignPrice);
             CheckIfCampaignIsLarger(ProductRegularPrice, ProductCampaignPrice);
-
         }
 
         [TearDown]
