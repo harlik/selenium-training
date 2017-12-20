@@ -24,7 +24,12 @@ namespace Selenium_Training_1
         [SetUp]
         public void start()
         {
-            this.driver = new TWebDriver();
+
+            InternetExplorerDriverService service = InternetExplorerDriverService.CreateDefaultService();
+            service.LoggingLevel = InternetExplorerDriverLogLevel.Debug;
+            service.LogFile = "D:\\iedriver.log";
+            driver = new InternetExplorerDriver(service);
+//            this.driver = new TWebDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
