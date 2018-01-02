@@ -26,9 +26,8 @@ namespace Selenium_Training_1
         [SetUp]
         public void start()
         {
-
-            driver = new RemoteWebDriver(new Uri("http://vsalm.main.aurigma.com:4444/wd/hub"), new TDriverOptions());
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver = new RemoteWebDriver(new Uri("http://customerscanvas:4222/wd/hub"), new TDriverOptions());
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
         [Test]
@@ -36,15 +35,15 @@ namespace Selenium_Training_1
         {
             driver.Navigate().GoToUrl("http://harlik.main.aurigma.com:9999/admin/?app=countries&doc=countries");
 
-            if (driver.FindElements(By.CssSelector("form[name='login_form']")).Count == 1)
-            {
-                driver.FindElement(By.Name("username")).SendKeys("admin");
-                driver.FindElement(By.Name("password")).SendKeys("admin");
-                driver.FindElement(By.Name("login")).Click();
-            };
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("form[name='login_form']")));
+
+            driver.FindElement(By.Name("username")).SendKeys("admin");
+            driver.FindElement(By.Name("password")).SendKeys("admin");
+            driver.FindElement(By.Name("login")).Click();
 
             driver.FindElement(By.CssSelector("a.button[href*='edit_country']")).Click();
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             //запоминаем хэндлер основного окна
             string mainWindow = driver.CurrentWindowHandle;
             //проходим по всем ссылкам, у которых есть "иконка в виде квадратика со стрелкой"

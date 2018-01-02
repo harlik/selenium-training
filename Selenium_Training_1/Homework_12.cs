@@ -51,7 +51,7 @@ namespace Selenium_Training_1
             int donaldsCount = driver.FindElements(By.XPath("//a[text()='" + productName + "']")).Count;
 
             //Create new product
-            driver.FindElement(By.CssSelector("a[href *= 'edit_product']")).Click();
+            driver.FindElement(By.CssSelector("a[href*='edit_product']")).Click();
 
             //General tab
             driver.FindElement(By.CssSelector("input[name*='name']")).SendKeys(productName);
