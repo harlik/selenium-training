@@ -17,7 +17,7 @@ using Titanium.Web.Proxy.EventArguments;
 
 namespace Selenium_Training_1
 {
-    [TestFixture(typeof(InternetExplorerDriver), typeof(InternetExplorerOptions)))]
+    [TestFixture(typeof(InternetExplorerDriver), typeof(InternetExplorerOptions))]
     [TestFixture(typeof(FirefoxDriver), typeof(FirefoxOptions))]
     [TestFixture(typeof(EdgeDriver), typeof(EdgeOptions))]
     [TestFixture(typeof(ChromeDriver), typeof(ChromeOptions))]
@@ -35,10 +35,15 @@ namespace Selenium_Training_1
         {
             Console.WriteLine(e.WebSession.Request.Url);
 
-            ////read request headers
+            //read request headers
             var requestHeaders = e.WebSession.Request.Headers;
 
-            Console.WriteLine(requestHeaders);
+            Console.WriteLine("Request Headers: ");
+
+            foreach (var header in requestHeaders)
+            {
+                Console.WriteLine(header);
+            }
 
             var method = e.WebSession.Request.Method.ToUpper();
             if ((method == "POST" || method == "PUT" || method == "PATCH"))
@@ -63,7 +68,6 @@ namespace Selenium_Training_1
             //read response headers
             var responseHeaders = e.WebSession.Response.Headers;
 
-            //if (!e.ProxySession.Request.Host.Equals("medeczane.sgk.gov.tr")) return;
             if (e.WebSession.Request.Method == "GET" || e.WebSession.Request.Method == "POST")
             {
                 if (e.WebSession.Response.StatusCode == 200)
@@ -87,12 +91,13 @@ namespace Selenium_Training_1
         }
 
         private IWebDriver driver;
+        private ProxyServer proxyServer;
 
         [SetUp]
         public void start()
         {
             //Set up & start Titanium proxy
-            ProxyServer proxyServer = new ProxyServer();
+            proxyServer = new ProxyServer();
             proxyServer.TrustRootCertificate = true;
 
             proxyServer.BeforeRequest += OnRequest;
@@ -159,6 +164,7 @@ namespace Selenium_Training_1
         [TearDown]
         public void stop()
         {
+            proxyServer.Stop();
             driver.Quit();
             driver = null;
         }
