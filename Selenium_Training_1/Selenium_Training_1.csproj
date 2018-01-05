@@ -74,6 +74,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Homework_19.cs" />
+    <Compile Include="Homework_18.cs" />
     <Compile Include="Homework_17.cs" />
     <Compile Include="Homework_16.cs" />
     <Compile Include="Homework_15.cs" />
@@ -81,7 +83,6 @@
     <Compile Include="Homework_13.cs" />
     <Compile Include="Homework_12.cs" />
     <Compile Include="Homework_11.cs" />
-    <Compile Include="Homework_18.cs" />
     <Compile Include="Homework_2_1.cs" />
     <Compile Include="Homework_1.cs" />
     <Compile Include="Homework_9_1.cs" />
