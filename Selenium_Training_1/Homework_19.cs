@@ -12,11 +12,6 @@ using System.IO;
 
 namespace Selenium_Training_1
 {
-    [TestFixture(typeof(InternetExplorerDriver))]
-    [TestFixture(typeof(FirefoxDriver))]
-    [TestFixture(typeof(EdgeDriver))]
-    [TestFixture(typeof(ChromeDriver))]
-
     internal class Page
     {
         protected IWebDriver driver;
@@ -103,6 +98,11 @@ namespace Selenium_Training_1
 
 
     };
+
+    [TestFixture(typeof(InternetExplorerDriver))]
+    [TestFixture(typeof(FirefoxDriver))]
+    [TestFixture(typeof(EdgeDriver))]
+    [TestFixture(typeof(ChromeDriver))]
 
     public class ClassHomework_19<TWebDriver> where TWebDriver : IWebDriver, new()
     {
