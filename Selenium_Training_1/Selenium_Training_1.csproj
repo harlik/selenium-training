@@ -74,6 +74,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Bitworks_Mypolk.cs" />
     <Compile Include="Homework_19.cs" />
     <Compile Include="Homework_18.cs" />
     <Compile Include="Homework_17.cs" />
